@@ -1,0 +1,29 @@
+*Here is a guide to how I have used data analytics to develop a system that helps a 250W BLDC hub motor on a bicycle by providing proportional torque support and matching the pedal speed with the motor speed. Based on the rider's pedaling effort, the system uses real-time feedback loops to modify motor power and torque after processing data from the MPU-6050 sensor (accelerometer, gyroscope, and temperature).
+
+*Inputs:
+Pedal Speed Measurement: Real-time data collection of pedal rotational speed (RPM or rad/s) using sensors like a rotary encoder.
+Motor Speed Adjustment: Dynamically adjusts motor speed to match pedal speed.
+Proportional Torque Assistance: Provides torque assistance based on the difference between pedal speed and motor speed.
+Real-Time Data Analytics: Processes accelerometer and gyroscope data to adjust motor output.
+
+*1. Real-Time Data Processing
+	Pedal Speed Data: The system continuously reads pedal speed in real-time (using sensors like a rotary encoder). This data is used to compute the motor speed and 	adjust the motor's torque accordingly.
+	Motor Speed Adjustment: Based on the pedal speed, the algorithm computes how much motor assistance (torque) is needed to match the pedal speed. This adjustment 	happens in real time, ensuring smooth operation.
+*2. Proportional Control Logic
+	The motor torque is adjusted in proportion to the difference between the pedal speed and motor speed. This forms the core of the system’s feedback control loop.
+	If pedal speed > motor speed, the motor provides torque assistance to match the pedal speed.
+	If pedal speed ≈ motor speed, the motor provides minimal torque.
+*3. Dynamic Torque Assistance
+	Dynamic adjustment of motor power is key to providing torque assistance. The system calculates the required motor torque based on the acceleration (from the 	accelerometer) and angular velocity (from the gyroscope), and adjusts the motor's torque output to maintain the desired motor speed.
+	If the motor speed lags behind the pedal speed, the algorithm dynamically increases the motor's torque to assist the rider's pedaling effort.
+*4. Feedback Loop and Data-Driven Decisions
+	Real-time feedback from the sensor data (pedal speed, motor speed, force, etc.) is used to make immediate adjustments to the motor’s performance. This allows the 	system to continuously adapt to changes in the rider’s effort, terrain, and speed.
+	The feedback loop ensures that the motor’s torque is continuously adjusted to match the rider's cadence, resulting in smooth and efficient operation.
+*5. Time-Based Analysis
+	The system simulates a time-based cycle, where the pedal speed fluctuates over time (simulating changes in terrain or rider effort). The motor continuously adjusts 	its torque to match the fluctuating pedal speed, demonstrating the importance of real-time data analytics in maintaining synchronization between the rider's pedaling 	and the motor's output.
+*6. Predictive Control
+	The proportional control mechanism used to adjust motor torque is a form of predictive analytics. By analyzing the difference between pedal speed and motor speed, the 	system predicts how much torque will be required to match the motor speed with the rider's cadence, ensuring efficient power distribution.
+*7. Energy Efficiency and Battery Management
+	The system adjusts motor power usage in real time based on the rider’s input. The current required by the motor is calculated using the power formula, and the system 	adapts to minimize energy consumption while still providing sufficient assistance.
+
+

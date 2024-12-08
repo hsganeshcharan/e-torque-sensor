@@ -1,0 +1,17 @@
+MPU-6050 Data Analytics pipeline
+
+This repo shows how to use the code to demonstrate fundamental data analytics techniques and communicate with the MPU-6050 sensor. Matplotlib and SciPy are used to process, smooth, and visualize the data gathered from the temperature sensor, gyroscope, and accelerometer integrated into the MPU unit.
+
+*Real-Time Data Collection: Continuously fetches accelerometer, gyroscope, and temperature data from the MPU-6050 sensor.
+*Data Processing: Applies the Savitzky-Golay filter to smooth the noisy sensor data.
+*Data Analytics: Visualizes sensor data over time using Matplotlib.
+*Motion Analysis: Tracks and visualizes accelerometer and gyroscope data to identify movement patterns.
+
+*Library Pre-req:
+	smbus (for I2C communication)
+	matplotlib (for plotting data)
+	scipy (for data smoothing)
+
+*I am assuming you're using a Raspberry Pi or ESP32 running MicroPython with I2C support.
+*Make sure the MPU-6050 is powered with 3.3V to avoid frying the chip as power is picked up from 12V Li-Ion battery.
+*Customize the collect_data() function if you want to save data to a file or perform further analysis (I have used it to display drive analytics)

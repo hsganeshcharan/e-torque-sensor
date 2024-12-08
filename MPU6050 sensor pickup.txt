@@ -1,0 +1,23 @@
+MPU-6050 Sensor Interface
+
+*To interface with the MPU-6050 sensor using Python via the I2C protocol. The MPU-6050 is an Inertial Measurement Unit (IMU) that provides acceleration, gyroscope, and temperature data. This implementation is designed to run on an ESP32 microcontroller.
+
+
+*I2C Communication: Communicates with the MPU-6050 using the ESP32's I2C interface. 
+*Sensor Initialization: Resets and configures power settings. Sets gyroscope and accelerometer sensitivity ranges. Configures sample rates and low-pass filters. 
+*Data Retrieval: Reads acceleration (X, Y, Z axes), gyroscope data (X, Y, Z axes), and temperature. 
+*Real-Time Monitoring: Continuously reads and displays sensor data.
+
+! Install pre-req modules: "machine" and "utime" modules (built into MicroPython)
+
+1. Initialization:
+	mpu_init(): Resets and configures the MPU-6050 sensor.
+2. Configuration:
+	set_gyro_fsr(fsr): Sets gyroscope full-scale range.
+	set_accel_fsr(fsr): Sets accelerometer full-scale range.
+	set_sample_rate(rate): Adjusts sample rate and applies a low-pass filter.
+3. Data Retrieval:
+	get_temperature(): Reads and converts temperature data.
+	get_gyroscope(): Retrieves gyroscope data for X, Y, Z axes.
+	get_accelerometer(): Retrieves accelerometer data for X, Y, Z axes.
+
